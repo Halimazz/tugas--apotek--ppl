@@ -19,6 +19,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        view()->share('admin', 'admin/layout/main');
+        
+        view()->share('dokter', 'dokter/layout/main');
+        
+        view()->share('apoteker', 'apoteker/layout/main');
+        
+        view()->share('kasir', 'kasir/layout/main');
     }
 }
