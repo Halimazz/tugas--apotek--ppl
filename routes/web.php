@@ -13,6 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', ('AuthController@login')); 
+
+Route::get('login', ('AuthController@login'));
+Route::get('register', ('AuthController@register'));
+Route::get('logout', ('AuthController@logout'));
+Route::post('loginProses', ('AuthController@loginProses'));
+Route::post('registerProses', ('AuthController@registerProses'));
+Route::get('register_paksa', ('AuthController@registerPaksa'));
+
+Route::middleware(['login'])->group(function () {
+
+    Route::middleware(['admin'])->group(function () {
+        Route::resource('admin/home', ('Admin\HomeController'));
+
+    });
+
+    Route::middleware(['dokter'])->group(function () {
+        Route::resource('dokter/home', ('Dokter\HomeController'));
+    });
+    
+    Route::middleware(['apoteker'])->group(function () {
+        Route::resource('apoteker/home', ('Apoteker\HomeController'));
+    });
+    
+    Route::middleware(['kasir'])->group(function () {
+        Route::resource('kasir/home', ('Kasir\HomeController'));
+    });
 });

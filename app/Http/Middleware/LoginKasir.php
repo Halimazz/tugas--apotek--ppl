@@ -17,8 +17,8 @@ class LoginAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(session()->get('role') != '2'){
-            return redirect()->to('/login')->with('gagal', 'Mohon Maaf Fitur ini hanya untuk Dokter');
+        if(session()->get('role') != '4'){
+            return redirect()->to('/login')->with('gagal', 'Mohon Maaf Fitur ini hanya untuk Kasir');
         }
         return $next($request);
     }
