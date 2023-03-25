@@ -26,7 +26,8 @@ Route::middleware(['login'])->group(function () {
 
     Route::middleware(['admin'])->group(function () {
         Route::resource('admin/home', ('Admin\HomeController'));
-        Route::resource('admin/user', ('Admin\UserController'));
+        Route::resource('admin/user', ('Admin\User\UserController'));
+        Route::resource('admin/role', ('Admin\User\UserRoleController'));
 
     });
 

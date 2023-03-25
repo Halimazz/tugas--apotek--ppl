@@ -4,39 +4,37 @@ namespace App\Http\Controllers\Admin\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\UserModel;
 use App\Models\UserRole;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class UserRoleController extends Controller
 {
-    private $views      = 'admin/users';
+    private $views      = 'admin/role';
     
     // Untuk keperluan redirect, hubungannya route / file web
-    private $url        = 'admin/users';
+    private $url        = 'admin/role';
     
     // Title head
-    private $title      = 'Halaman Users';
+    private $title      = 'Halaman Role';
 
     public function __construct()
     {
         // Di isi Construct. Biasanya saya isi untuk Model
 
         // Panggil disini biar lebih ringkas
-        $this->mUsers           = new UserModel();
         $this->userRole         = New UserRole();
 
     }
 
     public function index()
     {
-        $users = $this->mUsers->get();
+        $role = $this->userRole->get();
 
         $data = [
             'title'         => $this->title,
             'url'           => $this->url,
-            'page'          => 'Data Users',
-            'users'         => $users,
+            'page'          => 'Data Role',
+            'role'         => $role,
         ];
 
         // View, menuju file index di dalam folder = admin/mPerpusJurusan
@@ -49,7 +47,7 @@ class UserController extends Controller
         $data = [
             'title'         => $this->title,
             'url'           => $this->url,
-            'page'          => 'Tambah Data Users',
+            'page'          => 'Tambah Data Role',
         ];
 
         return view($this->views . "/create", $data);
@@ -59,17 +57,13 @@ class UserController extends Controller
     {
         // masuk sini hasil form create
 
-        $dataUser = [
-            'username'          => $request->username,
-            'password'          => Hash::make($request->password),
-            'sandi'             => $request->password,
-            'status'            => $request->status,
-            'idRole'            => $request->idRole,
+        $dataRole = [
+            'nama'          => $request->nama,
         ];
-        // echo json_encode($dataUser); die;
-        $this->mUsers->create($dataUser);
+        // echo json_encode($dataRole); die;
+        $this->userRole->create($dataRole);
 
-        return redirect("$this->url")->with('sukses', 'Users berhasil di tambahkan');
+        return redirect("$this->url")->with('sukses', 'Data Role berhasil di tambahkan');
     }
 
     public function show($id)
@@ -80,15 +74,13 @@ class UserController extends Controller
     public function edit($id)
     {
         // Get Data
-        $user = $this->mUsers->where('id', $id)->first();
-        $userRole = $this->userRole->get();
+        $userRole = $this->userRole->where('id', $id)->first();
         // echo json_encode($user); die;
         $data = [
             'title'         => $this->title,
             'url'           => $this->url,
             'page'          => 'Edit Data Users',
             'id'            => $id,
-            'user'          => $user,
             'userRole'      => $userRole
         ];
         return view($this->views . "/edit", $data);
@@ -96,27 +88,16 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        // Validasi
-        $validatedData = $request->validate([
-            'username'  =>  ['required', 'min:3', 'max:255', 'unique:users'],
-        ]);
-       
-        if ($request->password != $request->verifikasi) {
-            return redirect("$this->url/$request->id/edit")->with('gagal', 'Verifikasi password harus sama dengan password');
-        } else {
-            $dataUser = [
-                'username' => $request->username,
-                'password'      => Hash::make($request->password),
+            $dataRole = [
+                'nama' => $request->nama,
             ];
             // echo json_encode($dataSiswa); die;
-            $this->mUsers->where('id', $request->id)->update($dataUser);
-            return redirect("$this->url")->with('sukses', 'Data Users berhasil di edit');
-        }
+            $this->userRole->where('id', $request->id)->update($dataRole);
+            return redirect("$this->url")->with('sukses', 'Data Role berhasil di edit');
     }
 
     public function destroy($id)
     {
         //
     }
-
 }
