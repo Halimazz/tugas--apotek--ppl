@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Hash;
 
+// Model
 use App\Models\UserModel;
 use App\Models\UserRole;
 
@@ -22,7 +23,6 @@ class AuthController extends Controller
         $this->userRole         = New UserRole();
 
     }
-
     //LOGIN
     public function login(){
         $data = [
