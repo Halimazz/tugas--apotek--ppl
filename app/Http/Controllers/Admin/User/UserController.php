@@ -50,6 +50,7 @@ class UserController extends Controller
             'title'         => $this->title,
             'url'           => $this->url,
             'page'          => 'Tambah Data Users',
+            'userRole'      => $this->userRole->get(),
         ];
 
         return view($this->views . "/create", $data);
@@ -88,7 +89,7 @@ class UserController extends Controller
             'url'           => $this->url,
             'page'          => 'Edit Data Users',
             'id'            => $id,
-            'user'          => $user,
+            'users'          => $user,
             'userRole'      => $userRole
         ];
         return view($this->views . "/edit", $data);
