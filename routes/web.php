@@ -28,6 +28,9 @@ Route::middleware(['login'])->group(function () {
         Route::resource('admin/home', ('Admin\HomeController'));
         Route::resource('admin/users', ('Admin\User\UserController'));
         Route::resource('admin/role', ('Admin\User\UserRoleController'));
+        Route::resource('admin/master-obat', ('Admin\Master\ObatController'));
+        Route::resource('admin/master-dosis', ('Admin\Master\DosisController'));
+        Route::resource('admin/master-waktu', ('Admin\Master\WaktuController'));
 
     });
 

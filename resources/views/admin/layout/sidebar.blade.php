@@ -34,6 +34,21 @@
         </div>
       </li>
       <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <span class="menu-title">Master</span>
+          <i class="menu-arrow"></i>
+          <i class="mdi mdi-account mdi mdi-buffer"></i>
+        </a>
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{ url('admin/obat') }}">Data Obat</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ url('admin/master-dosis') }}">Data Dosis</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ url('admin/waktu') }}">Data Waktu</a></li>
+          </ul>
+      </li>
+
+
+      <li class="nav-item">
         <a class="nav-link" href="pages/icons/mdi.html">
           <span class="menu-title">Icons</span>
           <i class="mdi mdi-contacts menu-icon"></i>
