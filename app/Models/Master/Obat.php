@@ -2,10 +2,23 @@
 
 namespace App\Models\Master;
 
+use App\Models\UserModel;
+
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Obat extends Model
+//library
+use DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+Class Obat extends Model
 {
-    use HasFactory;
+    use HasFactory,SoftDeletes;
+    protected $table = 'obat';
+
+    protected $guarded = ['id'];
+    public function user(){
+        return $this->belongsTo(UserModel::class,'idPegawai','id');
+    }
 }
