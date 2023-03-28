@@ -25,8 +25,10 @@
             {{-- otomatis masuk ke admin/daerah , karena pake resource --}}
             <div class="card-body">
                     <div class="mb-3">
-                        <h5 for="nama">Nama</h5>
+                        <h5 for="nama">Daftar Dosis</h5>
                         <p>{{ $dosis->nama }}</p>
+                        <h5 for="nama">Penginput</h5>
+                        <p>{{ $dosis->user->username }}</p>
                     </div>
             </div>
         </div>

@@ -23,22 +23,14 @@
             </div>
           </div>
             {{-- otomatis masuk ke admin/daerah , karena pake resource --}}
-            <form action="{{ url("$url") }}" method="POST">
-                {{-- csrf gunanya buat pastiin kalo data dari form. sejenis security --}}
-                @csrf 
-                {{-- <input type="text" name="e" >
-                <input type="submit" > --}}
-                <div class="card-body">
+            <div class="card-body">
                     <div class="mb-3">
-                        <label class="col-form-label pt-0" for="nama">Dosis</label>
-                        <input name="nama" id="nama" class="form-control" type="text" placeholder="Dosis">
+                        <h5 for="nama">Daftar Waktu</h5>
+                        <p>{{ $waktu->nama }}</p>
+                        <h5 for="nama">Penginput</h5>
+                        <p>{{ $waktu->user->username }}</p>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <input type="submit" class="btn btn-primary" value="Simpan">
-                    <input type="reset" class="btn btn-secondary" value="Cancel">
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 @endsection

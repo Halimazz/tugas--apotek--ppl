@@ -11,15 +11,6 @@
 @section('content')
     {{-- Tempat Ngoding isi web --}}
     <div class="col-sm-12 pt-4">
-        @if (session()->has('sukses'))
-            <div class="alert alert-success" role="alert">
-                {{ session('sukses') }}
-            </div>
-        @elseif (session()->has('gagal'))
-            <div class="alert alert-danger" role="alert">
-                {{ session('gagal') }}
-            </div>
-        @endif
         <div class="card">
           <div class="card-header">
             <div class="row">
@@ -31,20 +22,21 @@
                 </div>
             </div>
           </div>
-            {{-- otomatis masuk ke admin/dosis , karena pake resource --}}
-            <form action="{{ url("$url")}}/{{ $id }}" method="post">
-                @csrf
-                @method('PUT')
+            {{-- otomatis masuk ke admin/daerah , karena pake resource --}}
+            <form action="{{ url("$url") }}" method="POST">
+                {{-- csrf gunanya buat pastiin kalo data dari form. sejenis security --}}
+                @csrf 
+                {{-- <input type="text" name="e" >
+                <input type="submit" > --}}
                 <div class="card-body">
-                    <div class="form-group">
-                        <div class="mb-3">
-                            <label class="col-form-label pt-0" for="nama">Dosis</label>
-                            <input name="nama" id="nama" class="form-control" type="text" value="{{ $dosis->nama }}">
-                        </div>
+                    <div class="mb-3">
+                        <label class="col-form-label pt-0" for="nama">Waktu</label>
+                        <input name="nama" id="nama" class="form-control" type="text" placeholder="Waktu">
                     </div>
-                    <div class="form-group mt-3">
-                        <input type="submit" class="btn btn-primary" value="Simpan">
-                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" class="btn btn-primary" value="Simpan">
+                    <input type="reset" class="btn btn-secondary" value="Cancel">
                 </div>
             </form>
         </div>

@@ -61,7 +61,7 @@ class DosisController extends Controller
             'title'         => $this->title,
             'url'           => $this->url,
             'page'          => 'Detail Data Daerah',
-            'daerah'        => $dosis
+            'dosis'        => $dosis
         ];
         return view($this->views . "/show", $data);
     }
