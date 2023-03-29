@@ -41,9 +41,9 @@
                             <label class="col-form-label pt-0" for="nama">Nama Obat</label>
                             <input name="nama" id="nama" class="form-control" type="text" value="{{ $obat->nama }}">
                             <label class="col-form-label pt-0" for="nama">Stok</label>
-                            <input name="stok" id="nama" class="form-control" type="text" value="{{ $obat->stok }}">
+                            <input name="stok" id="nama" class="form-control" type="number" value="{{ $obat->stok }}">
                             <label class="col-form-label pt-0" for="nama">Harga</label>
-                            <input name="harga" id="nama" class="form-control" type="text" value="{{ $obat->harga }}">
+                            <input name="harga" id="nama" class="form-control" type="number" value="{{ $obat->harga }}">
                             <label class="col-form-label pt-0" for="nama">Expired</label>
                             <input name="tanggal_kadaluarsa" id="nama" class="form-control" type="date" value="{{ $obat->tanggal_kadaluarsa }}">
                             <label class="col-form-label pt-0" for="nama">Production Date</label>

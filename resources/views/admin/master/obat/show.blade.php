@@ -27,31 +27,31 @@
                 <table id="basic-1" class="display">
                     <tbody>
                         <tr>
-                            <td><strong>Nama Obat :</strong></td>
-                            <td>{{ $obat->nama }}</td>
+                            <td><strong>Nama Obat</strong></td>
+                            <td>:{{ $obat->nama }}</td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td><strong>Stok</strong></td>
-                            <td>{{ $obat->stok }}</td>
+                            <td>:{{ $obat->stok }}</td>
                             <td><strong>Harga</strong></td>
-                            <td>{{ $obat->harga }}</td>
-                        </tr>
+                            <td>:Rp.{{ $obat->harga }}</td>
+                        </tr>   
                         <tr>
                             <td><strong>Expired</strong></td>
-                            <td>{{ $obat->tanggal_kadaluarsa}}</td>
+                            <td>:{{ $obat->tanggal_kadaluarsa}}</td>
                             <td><strong>Production date</strong></td>
-                            <td>{{ $obat->tanggal_produksi }}</td>
+                            <td>:{{ $obat->tanggal_produksi }}</td>
                         </tr>
                         <tr>
                             <td><strong>Pabrik</strong></td>
-                            <td>{{ $obat->pabrik }}</td>
+                            <td>:{{ $obat->pabrik }}</td>
                             
                         </tr>
                         <tr>
                             <td><strong>Alamat Pabrik</strong></td>
-                            <td>{{ $obat->alamat_pabrik }}</td>
+                            <td>:{{ $obat->alamat_pabrik }}</td>
 
                         </tr>
                     </tbody>

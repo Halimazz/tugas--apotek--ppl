@@ -40,8 +40,20 @@
                 <input type="submit" > --}}
                 <div class="card-body">
                     <div class="mb-3">
-                        <label class="col-form-label pt-0" for="nama">Dosis</label>
-                        <input name="nama" id="nama" class="form-control" type="text" placeholder="Dosis">
+                        <label class="col-form-label pt-0" for="nama">Nama Obat</label>
+                        <input name="nama" id="nama" class="form-control" type="text" placeholder="Nama Obat" required>
+                        <label class="col-form-label pt-0" for="nama">Stok</label>
+                        <input name="stok" id="nama" class="form-control" type="number" placeholder="Stok" required>
+                        <label class="col-form-label pt-0" for="nama">Harga</label>
+                        <input name="harga" id="nama" class="form-control" type="number"  placeholder="Harga" required>
+                        <label class="col-form-label pt-0" for="nama">Expired</label>
+                        <input name="tanggal_kadaluarsa" id="nama" class="form-control" type="date" placeholder="Expired" required>
+                        <label class="col-form-label pt-0" for="nama">Production Date</label>
+                        <input name="tanggal_produksi" id="nama" class="form-control" type="date" placeholder="Production Date" required>
+                        <label class="col-form-label pt-0" for="nama">Pabrik</label>
+                        <input name="pabrik" id="nama" class="form-control" type="text" placeholder="Pabrik" required>
+                        <label class="col-form-label pt-0" for="nama">Alamat Pabrik</label>
+                        <input name="alamat_pabrik" id="nama" class="form-control" type="textarea" placeholder="Alamat Pabrik" required>
                     </div>
                 </div>
                 <div class="card-footer">
