@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Master;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\Master\Obat;
+use App\Models\Admin\Master\Obat;
 class ObatController extends Controller
 {
     private $views      = 'admin/master/obat';

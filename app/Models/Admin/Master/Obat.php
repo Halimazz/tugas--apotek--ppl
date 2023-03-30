@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Master;
+namespace App\Models\Admin\Master;
 
 use App\Models\UserModel;
 
@@ -12,11 +12,10 @@ use Illuminate\Database\Eloquent\Model;
 use DB;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
-class Waktu extends Model
+Class Obat extends Model
 {
     use HasFactory,SoftDeletes;
-    protected $table = 'waktu';
+    protected $table = 'obat';
 
     protected $guarded = ['id'];
     public function user(){

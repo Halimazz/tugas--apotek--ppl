@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Admin\User;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,12 +9,17 @@ use Illuminate\Database\Eloquent\Model;
 use DB;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class UserRole extends Model
+class UserModel extends Model
 {
     // softdelete itu untuk fitur dari laravel. User hapus, data untuk user hilang tapi di tabel tidak hilang. cuma di hiden
     use HasFactory, SoftDeletes;
 
     // Nama tabel
-    protected $table = 'userRole';
+    protected $table = 'users';
     protected $guarded = ['id'];
+
+    public function role()
+    {
+        return $this->belongsTo(UserRole::class, 'idRole', 'id');
+    }
 }
