@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Dokter;
+namespace App\Http\Controllers\Dokter\Resep;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ResepController extends Controller
 {
-    private $views      = 'dokter/home';
-    private $url        = 'dokter/home';
+   
+    private $views      = 'dokter/resep';
+    private $url        = 'dokter/resep';
     private $title      = 'Halaman Dashboard';
 
 
