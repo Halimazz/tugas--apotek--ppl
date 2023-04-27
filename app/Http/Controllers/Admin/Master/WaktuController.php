@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Master;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\Master\Waktu;
+use App\Models\Admin\Master\Waktu;
 class WaktuController extends Controller
 {
     private $views      = 'admin/master/waktu';

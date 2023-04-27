@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models\Master;
+namespace App\Models\Admin\Master;
 
-use App\Models\UserModel;
+use App\Models\Admin\User\UserModel;
 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,11 +12,10 @@ use Illuminate\Database\Eloquent\Model;
 use DB;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
-class Dosis extends Model
+Class Obat extends Model
 {
     use HasFactory,SoftDeletes;
-    protected $table = 'dosis';
+    protected $table = 'obat';
 
     protected $guarded = ['id'];
     public function user(){

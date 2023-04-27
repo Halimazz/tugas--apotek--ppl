@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Master;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\Master\Dosis;
+use App\Models\Admin\Master\Dosis;
 class DosisController extends Controller
 {
     private $views      = 'admin/master/dosis';

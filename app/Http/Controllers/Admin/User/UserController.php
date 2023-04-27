@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\UserModel;
-use App\Models\UserRole;
+use App\Models\Admin\User\UserModel;
+use App\Models\Admin\User\UserRole;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller

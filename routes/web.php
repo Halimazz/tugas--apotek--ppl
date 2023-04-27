@@ -35,7 +35,8 @@ Route::middleware(['login'])->group(function () {
     });
 
     Route::middleware(['dokter'])->group(function () {
-        Route::resource('dokter/home', ('Dokter\HomeController'));
+        Route::resource('dokter/home', ('Dokter\Home\HomeController'));
+        Route::resource('dokter/resep', ('Dokter\Resep\ResepController'));
     });
     
     Route::middleware(['apoteker'])->group(function () {

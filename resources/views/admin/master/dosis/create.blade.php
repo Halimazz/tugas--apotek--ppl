@@ -11,6 +11,16 @@
 @section('content')
     {{-- Tempat Ngoding isi web --}}
     <div class="col-sm-12 pt-4">
+        @if (session()->has('sukses'))
+            <div class="alert alert-success" role="alert">
+                {{ session('sukses') }}
+            </div>
+        @elseif (session()->has('gagal'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('gagal') }}
+            </div>
+        @endif
+    <div class="col-sm-12 pt-4">
         <div class="card">
           <div class="card-header">
             <div class="row">

@@ -8,8 +8,8 @@ use DB;
 use Illuminate\Support\Facades\Hash;
 
 // Model
-use App\Models\UserModel;
-use App\Models\UserRole;
+use App\Models\Admin\User\UserModel;
+use App\Models\Admin\User\UserRole;
 
 class AuthController extends Controller
 {   

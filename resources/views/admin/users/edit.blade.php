@@ -19,7 +19,7 @@
       </div>
   </div>
       {{-- otomatis masuk ke admin/daerah , karena pake resource --}}
-      <form action="{{ url("admin/users")}}/{{ $id }}" method="post">
+      <form action="{{ url("admin/users/update")}}" method="post">
           @csrf
           @method('PUT')
           <div class="card-body">
@@ -37,11 +37,11 @@
                   </div>
                   <div class="mb-3">
                       <label class="col-form-label pt-0" for="nama">Password</label>
-                      <input name="password" id="password" class="form-control" type="text" placeholder="Masukkan Password">
+                      <input name="password" id="password" class="form-control" type="password" placeholder="Masukkan Password">
                   </div>
                   <div class="mb-3">
                       <label class="col-form-label pt-0" for="nama">Verifikasi Password</label>
-                      <input name="verifikasi" id="password" class="form-control" type="text" placeholder="Masukkan Ulang Password">
+                      <input name="verifikasi" id="password" class="form-control" type="password" placeholder="Masukkan Ulang Password">
                   </div>
               </div>
                   <div class="form-group mt-3">
