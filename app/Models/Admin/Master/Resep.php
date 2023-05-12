@@ -34,4 +34,7 @@ class Resep extends Model
     public function user(){
         return $this->belongsTo(UserModel::class,'idPegawai','id');
     }
+    public function dokter(){
+        return $this->belongsTo(Pasien::class,'id','id');
+    }
 }
