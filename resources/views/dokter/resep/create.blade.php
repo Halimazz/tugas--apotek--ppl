@@ -1,4 +1,4 @@
-@extends($admin)
+@extends($dokter)
 
 @section('css-library')
     {{-- Tempat Ngoding Meletakkan css library --}}
