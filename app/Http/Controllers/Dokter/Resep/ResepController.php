@@ -23,7 +23,7 @@ class ResepController extends Controller
     public function __construct()
     {
        $this->dosis= new Dosis();
-     $this->waktu= new Waktu();
+         $this->waktu= new Waktu();
         $this->obat= new Obat();
         $this->resep= new Resep();
     }
@@ -56,16 +56,24 @@ class ResepController extends Controller
             'waktu'         => $waktu,
             'obat'          => $obat
         ];
+        return view($this->views . "/create", $data);
     }
 
     public function store(Request $request)
     {
        $dataResep =[
+       
         'idMObat'       =>$request->idMObat,
         'idMDosis'      =>$request->idMDosis,
         'idMWaktu'      =>$request->idMWaktu,
-        'idMDokter'     =>session()->get('users_id')
+        'idMDokter'     =>session()->get('users_id'),
+        'nama_pasien'   =>$request->nama_pasien,
+        'no_telp'       =>$request->no_telp
+
        ];
+       $this->resep->create($dataResep);
+
+       return redirect("$this->url")->with('sukses', 'Resep berhasil di tambahkan');
     }
 
     public function show($id)
