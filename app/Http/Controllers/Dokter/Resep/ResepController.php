@@ -90,12 +90,36 @@ class ResepController extends Controller
 
     public function edit($id)
     {
-        //
+       $resep      = $this->resep->where('id', $id)->first();
+    
+        $data = [
+            'title'         => $this->title,
+            'url'           => $this->url,
+            'page'          => 'Edit Pengajuan',
+            'id'            => $id,
+            'resep'     => $resep,
+            
+
+            
+        ];
+        return view($this->views . "/edit", $data);
     }
 
     public function update(Request $request, $id)
     {   
-        //
+        $dataResep =[
+       
+            'idMObat'       =>$request->idMObat,
+            'idMDosis'      =>$request->idMDosis,
+            'idMWaktu'      =>$request->idMWaktu,
+            'idMDokter'     =>session()->get('users_id'),
+            'nama_pasien'   =>$request->nama_pasien,
+            'no_telp'       =>$request->no_telp
+    
+           ];
+           $this->resep->where('id', $id)->update($dataResep);
+
+           return redirect("$this->url")->with('sukses', 'resep berhasil di edit');
     }
 
     public function destroy($id)

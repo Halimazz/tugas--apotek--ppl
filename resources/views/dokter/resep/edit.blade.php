@@ -38,20 +38,45 @@
                 <div class="card-body">
                     <div class="form-group">
                         <div class="mb-3">
-                            <label class="col-form-label pt-0" for="nama">Nama Obat</label>
-                            <input name="nama" id="nama" class="form-control" type="text" value="{{ $obat->nama }}">
-                            <label class="col-form-label pt-0" for="nama">Stok</label>
-                            <input name="stok" id="nama" class="form-control" type="number" value="{{ $obat->stok }}">
-                            <label class="col-form-label pt-0" for="nama">Harga</label>
-                            <input name="harga" id="nama" class="form-control" type="number" value="{{ $obat->harga }}">
-                            <label class="col-form-label pt-0" for="nama">Expired</label>
-                            <input name="tanggal_kadaluarsa" id="nama" class="form-control" type="date" value="{{ $obat->tanggal_kadaluarsa }}">
-                            <label class="col-form-label pt-0" for="nama">Production Date</label>
-                            <input name="tanggal_produksi" id="nama" class="form-control" type="date" value="{{ $obat->tanggal_produksi }}">
-                            <label class="col-form-label pt-0" for="nama">Pabrik</label>
-                            <input name="pabrik" id="nama" class="form-control" type="text" value="{{ $obat->pabrik }}">
-                            <label class="col-form-label pt-0" for="nama">Alamat Pabrik</label>
-                            <input name="alamat_pabrik" id="nama" class="form-control" type="textarea" value="{{ $obat->alamat_pabrik }}">
+                            <label class="col-form-label pt-0" for="nama">Nama Pasien</label>
+                            <input name="nama_pasien" id="nama" class="form-control" type="text" placeholder="Nama Pasien" value="{{ $resep->nama_pasien }}" required>
+                            <label class="col-form-label pt-0" for="no_telp">Nomor telfon</label>
+                            <input name="no_telp" id="no_telp" class="form-control" type="tel" placeholder="Nomor telfon" value="{{ $resep->no_telp }}"required>
+                        </div>
+                        <div class="mb-3">
+                            <div class="col-form-label">Obat</div>
+                            <select id="select-obat" class="form-control" name="idMObat" required>
+                                @if(isset($obat))
+                                    @foreach ($obat as $p)
+                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="col-form-label">Dosis</div>
+                            <select id="select-dosis" class="form-control" name="idMDosis" required>
+                                <option value="">Pilih</option>
+                                @if (isset($dosis))
+                                @foreach ($dosis as $p)
+                                    <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                @endforeach
+  
+                                @endif
+                                
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <div class="col-form-label">Waktu</div>
+                            <select id="select-waktu" class="form-control" name="idMWaktu" required>
+                                <option value="">Pilih</option>
+                                @if(isset($waktu)))
+                                @foreach ($waktu as $p)
+                                    <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                @endforeach
+                            @endif
+                            </select>
                         </div>
                     </div>
                     <div class="form-group mt-3">
