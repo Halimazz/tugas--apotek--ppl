@@ -46,11 +46,6 @@
                         <div class="mb-3">
                             <div class="col-form-label">Obat</div>
                             <select id="select-obat" class="form-control" name="idMObat" required>
-                                @if(isset($obat))
-                                    @foreach ($obat as $p)
-                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
-                                    @endforeach
-                                @endif
                             </select>
                         </div>
                         

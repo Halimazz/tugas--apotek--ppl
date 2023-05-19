@@ -91,6 +91,7 @@ class ResepController extends Controller
     public function edit($id)
     {
        $resep      = $this->resep->where('id', $id)->first();
+       $obat = Obat::all();
     
         $data = [
             'title'         => $this->title,
@@ -102,7 +103,7 @@ class ResepController extends Controller
 
             
         ];
-        return view($this->views . "/edit", $data);
+        return view($this->views . "/edit", $data, compact('obat'));   
     }
 
     public function update(Request $request, $id)
