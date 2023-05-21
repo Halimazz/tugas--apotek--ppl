@@ -91,19 +91,24 @@ class ResepController extends Controller
     public function edit($id)
     {
        $resep      = $this->resep->where('id', $id)->first();
-       $obat = Obat::all();
+        $obat = $this->obat->get();
+         $dosis = Dosis::all();
+        $waktu = Waktu::all();
     
         $data = [
             'title'         => $this->title,
             'url'           => $this->url,
-            'page'          => 'Edit Pengajuan',
+            'page'          => 'Edit Resep Obat',
             'id'            => $id,
             'resep'     => $resep,
+            'obat'      => $obat,
+            'dosis'     => $dosis,
+            'waktu'     => $waktu,
             
 
             
         ];
-        return view($this->views . "/edit", $data, compact('obat'));   
+        return view($this->views . "/edit", $data);   
     }
 
     public function update(Request $request, $id)

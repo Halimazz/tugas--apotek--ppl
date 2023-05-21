@@ -43,34 +43,39 @@
                             <label class="col-form-label pt-0" for="no_telp">Nomor telfon</label>
                             <input name="no_telp" id="no_telp" class="form-control" type="tel" placeholder="Nomor telfon" value="{{ $resep->no_telp }}"required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" >
                             <div class="col-form-label">Obat</div>
-                            <select id="select-obat" class="form-control" name="idMObat" required>
+                            <select id="select-obat" class="form-control" name="idMObat"  required>
+                                @foreach ($obat as $p)
+                                <option value="{{ $p->id }}" selected >{{ $p->nama }}</option>
+                                    @if ($p->id != $p->id)
+                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                    @endif
+                                @endforeach
                             </select>
                         </div>
                         
                         <div class="mb-3">
                             <div class="col-form-label">Dosis</div>
                             <select id="select-dosis" class="form-control" name="idMDosis" required>
-                                <option value="">Pilih</option>
-                                @if (isset($dosis))
                                 @foreach ($dosis as $p)
-                                    <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                <option value="{{ $p->id }}" selected >{{ $p->nama }}</option>
+                                    @if ($p->id != $p->id)
+                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                    @endif
                                 @endforeach
-  
-                                @endif
                                 
                             </select>
                         </div>
                         <div class="mb-3">
                             <div class="col-form-label">Waktu</div>
                             <select id="select-waktu" class="form-control" name="idMWaktu" required>
-                                <option value="">Pilih</option>
-                                @if(isset($waktu)))
                                 @foreach ($waktu as $p)
-                                    <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                <option value="{{ $p->id }}" selected >{{ $p->nama }}</option>
+                                    @if ($p->id != $p->id)
+                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                    @endif
                                 @endforeach
-                            @endif
                             </select>
                         </div>
                     </div>
