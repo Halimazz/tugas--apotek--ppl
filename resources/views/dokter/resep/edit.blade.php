@@ -47,7 +47,7 @@
                             <div class="col-form-label">Obat</div>
                             <select id="select-obat" class="form-control" name="idMObat"  required>
                                 @foreach ($obat as $p)
-                                <option value="{{ $p->id }}" selected >{{ $p->nama }}</option>
+                                <option value="{{ $p->id }}" selected > {{ $p->nama }}</option>
                                     @if ($p->id != $p->id)
                                         <option value="{{ $p->id }}">{{ $p->nama }}</option>
                                     @endif
