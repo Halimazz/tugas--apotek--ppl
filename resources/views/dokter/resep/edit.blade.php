@@ -46,12 +46,14 @@
                         <div class="mb-3" >
                             <div class="col-form-label">Obat</div>
                             <select id="select-obat" class="form-control" name="idMObat"  required>
+                                <option value="{{ $resep->obat->id }}" > {{ $resep->obat->nama }}</option>
                                 @foreach ($obat as $p)
-                                <option value="{{ $p->id }}" selected > {{ $p->nama }}</option>
-                                    @if ($p->id != $p->id)
-                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                    @if ($p->id == $resep->obat->id)
+                                        <option value="{{ $p->id }}" selected>{{ $p->nama }}</option>
                                     @endif
+                                    
                                 @endforeach
+                                
                             </select>
                         </div>
                         

@@ -38,7 +38,7 @@ class ResepController extends Controller
             'resep'         => $resep,
             'idMDokter'       =>session()->get('users_id')
         ];
-        
+        dd($resep);
         return view($this->views . "/index", $data);
     }
 
@@ -91,10 +91,9 @@ class ResepController extends Controller
     public function edit($id)
     {
        $resep      = $this->resep->where('id', $id)->first();
-        $obat = $this->obat->get();
+        $obat = Obat::all();
          $dosis = Dosis::all();
         $waktu = Waktu::all();
-    
         $data = [
             'title'         => $this->title,
             'url'           => $this->url,
@@ -108,6 +107,7 @@ class ResepController extends Controller
 
             
         ];
+        dd($resep);
         return view($this->views . "/edit", $data);   
     }
 

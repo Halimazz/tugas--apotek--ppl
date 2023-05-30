@@ -40,11 +40,11 @@
                         <thead>
                             <tr>
                                 <th width="5%">#</th>
-                                <th>Nama Obat</th>
-                                <th>Stok</th>
-                                <th>Harga</th>
-                                <th>Expired</th>
-                                <th>Pegawai</th>
+                                <th>Nama Pasien</th>
+                                <th>Nomer telfon</th>
+                                <th>Obat</th>
+                                <th>Dosis</th>
+                                <th>Waktu</th>
                                 <th width="10%">Action</th>
                             </tr>
                         </thead>
