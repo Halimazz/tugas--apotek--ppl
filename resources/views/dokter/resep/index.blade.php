@@ -57,7 +57,7 @@
                                     <td>{{ $p->obat->nama }}</td>
                                     <td>{{ $p->dosis->nama }}</td>
                                     <td>{{ $p->waktu->nama }}</td>
-                                    <td>{{ $p->dokter->username }}</td>
+                                    {{-- <td>{{ $p->dokter->username }}</td> --}}
                                     <td>
                                         <div class="btn-group btn-group-square" role="group" aria-label="">
                                             <a href="{{ url("$url/" . $p->id, []) }}" class="btn btn-dark" title="Detail Data">Detail</a>

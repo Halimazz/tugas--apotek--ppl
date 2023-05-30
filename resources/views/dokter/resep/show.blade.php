@@ -46,7 +46,7 @@
                         </tr>
                         <tr>
                             <td><strong>Dokter</strong></td>
-                            <td>:{{ $resep->dokter->user}}</td> 
+                            {{-- <td>:{{ $resep->dokter->user}}</td>  --}}
                             
                         </tr>
                     </tbody>
