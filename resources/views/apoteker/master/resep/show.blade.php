@@ -1,4 +1,4 @@
-@extends($dokter)
+@extends($apoteker)
 
 @section('css-library')
     {{-- Tempat Ngoding Meletakkan css library --}}
@@ -27,27 +27,32 @@
                 <table id="basic-1" class="display">
                     <tbody>
                         <tr>
-                            <td><strong>Nama Pasien</strong></td>
-                            <td>:{{ $resep->nama_pasen }}</td>
+                            <td><strong>Nama Obat</strong></td>
+                            <td>:{{ $obat->nama }}</td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td><strong>No Telfon</strong></td>
-                            <td>:{{ $resep->no_telp }}</td>
-                            <td><strong>Obat</strong></td>
-                            <td>{{ $resep->obat->nama }}</td>
+                            <td><strong>Stok</strong></td>
+                            <td>:{{ $obat->stok }}</td>
+                            <td><strong>Harga</strong></td>
+                            <td>:Rp.{{ $obat->harga }}</td>
                         </tr>   
                         <tr>
-                            <td><strong>Dosis</strong></td>
-                            <td>:{{ $resep->dosis->nama}}</td>
-                            <td><strong>Waktu</strong></td>
-                            <td>:{{ $resep->waktu->nama }}</td>
+                            <td><strong>Expired</strong></td>
+                            <td>:{{ $obat->tanggal_kadaluarsa}}</td>
+                            <td><strong>Production date</strong></td>
+                            <td>:{{ $obat->tanggal_produksi }}</td>
                         </tr>
                         <tr>
-                            <td><strong>Dokter</strong></td>
-                            <td>:{{ $resep->dokter->user}}</td> 
+                            <td><strong>Pabrik</strong></td>
+                            <td>:{{ $obat->pabrik }}</td>
                             
+                        </tr>
+                        <tr>
+                            <td><strong>Alamat Pabrik</strong></td>
+                            <td>:{{ $obat->alamat_pabrik }}</td>
+
                         </tr>
                     </tbody>
                 </table>

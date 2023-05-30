@@ -34,13 +34,15 @@ class Resep extends Model
     public function user(){
         return $this->belongsTo(UserModel::class,'idPegawai','id');
     }
-    public function dokter(){
-        return $this->belongsTo(UserModel::class,'idMdokter','id');
+    public function dokter()
+    {
+        return $this->belongsTo(UserModel::class, 'idMDokter','id')->dokter();
     }
+    
     public function apoteker(){
-        return $this->belongsTo(UserModel::class,'idMapoteker','id');
+        return $this->belongsTo(UserModel::class,'idMApoteker','id');
     }
     public function kasir(){
-        return $this->belongsTo(UserModel::class,'idMkasir','id');
+        return $this->belongsTo(UserModel::class,'idMKasir','id');
     }
 }

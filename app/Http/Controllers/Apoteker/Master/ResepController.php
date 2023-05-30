@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dokter\Resep;
+namespace App\Http\Controllers\Apoteker\Master;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,8 +15,8 @@ use App\Models\Admin\Master\Waktu;
 class ResepController extends Controller
 {
    
-    private $views      = 'dokter/resep';
-    private $url        = 'dokter/resep';
+    private $views      = 'apoteker/master/resep';
+    private $url        = 'apoteker/master-resep';
     private $title      = 'Halaman Dashboard';
 
 
@@ -81,7 +81,7 @@ class ResepController extends Controller
         $data = [
             'title'         => $this->title,
             'url'           => $this->url,
-            'page'          => 'Detail Resep Obat',
+            'page'          => 'Detail Pengajuan',
             'resep'         => $resep
         ];
         return view($this->views . "/show", $data);
@@ -106,7 +106,6 @@ class ResepController extends Controller
 
             
         ];
-        dd($resep);
         return view($this->views . "/edit", $data);   
     }
 

@@ -41,6 +41,10 @@ Route::middleware(['login'])->group(function () {
     
     Route::middleware(['apoteker'])->group(function () {
         Route::resource('apoteker/home', ('Apoteker\HomeController'));
+        Route::resource('apoteker/master-resep', ('Apoteker\Master\ResepController'));
+        Route::resource('apoteker/master-obat', ('Apoteker\Master\ObatController'));
+        Route::resource('apoteker/master-dosis', ('Apoteker\Master\DosisController'));
+        Route::resource('apoteker/master-waktu', ('Apoteker\Master\WaktuController'));
     });
     
     Route::middleware(['kasir'])->group(function () {

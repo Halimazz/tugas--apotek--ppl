@@ -1,4 +1,4 @@
-@extends( $dokter )
+@extends( $apoteker)
 
 @section('css-library')
 {{-- <link rel="stylesheet" type="text/css" href="{{ url('') }}/assets/css/vendors/datatables.css"> --}}
@@ -40,24 +40,17 @@
                         <thead>
                             <tr>
                                 <th width="5%">#</th>
-                                <th>Nama Pasien</th>
-                                <th>Nomer telfon</th>
-                                <th>Obat</th>
-                                <th>Dosis</th>
-                                <th>Waktu</th>
+                                <th>Nama</th>
+                                <th>Pegawai</th>
                                 <th width="10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($resep as $p)
+                            @foreach ($dosis as $p)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $p->nama_pasien }}</td>
-                                    <td>{{ $p->no_telp }}</td>
-                                    <td>{{ $p->obat->nama }}</td>
-                                    <td>{{ $p->dosis->nama }}</td>
-                                    <td>{{ $p->waktu->nama }}</td>
-                                    <td>{{ $p->dokter->username }}</td>
+                                    <td>{{ $p->nama }}</td>
+                                    <td>{{ $p->user->username }}</td>
                                     <td>
                                         <div class="btn-group btn-group-square" role="group" aria-label="">
                                             <a href="{{ url("$url/" . $p->id, []) }}" class="btn btn-dark" title="Detail Data">Detail</a>

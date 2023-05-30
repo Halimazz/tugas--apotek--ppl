@@ -21,19 +21,6 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-        <span class="menu-title">Akun</span>
-        <i class="menu-arrow"></i>
-        <i class="mdi mdi-account menu-icon"></i>
-      </a>
-      <div class="collapse" id="ui-basic">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/users') }}">Data Users</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/role') }}">Data Role</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-master" aria-expanded="false" aria-controls="ui-master">
         <span class="menu-title">Master</span>
         <i class="menu-arrow"></i>
@@ -41,10 +28,10 @@
       </a>
       <div class="collapse" id="ui-master">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/master-resep') }}">Data Resep</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/master-obat') }}">Data Obat</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/master-dosis') }}">Data Dosis</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/master-waktu') }}">Data Waktu</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ url('apoteker/master-resep') }}">Data Resep</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ url('apoteker/master-obat') }}">Data Obat</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ url('apoteker/master-dosis') }}">Data Dosis</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ url('apoteker/master-waktu') }}">Data Waktu</a></li>
         </ul>
     </li>
 

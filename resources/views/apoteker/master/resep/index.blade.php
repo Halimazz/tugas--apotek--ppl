@@ -1,4 +1,4 @@
-@extends( $dokter )
+@extends( $apoteker )
 
 @section('css-library')
 {{-- <link rel="stylesheet" type="text/css" href="{{ url('') }}/assets/css/vendors/datatables.css"> --}}
@@ -30,9 +30,6 @@
                         <div class="col-lg-6">
                             <h5 class="card-title">{{ $title }}</h5>
                         </div>
-                        <div class="col-lg-6">
-                            <a href="{{ url("$url/create", []) }}" class="btn btn-sm btn-primary float-end">Tambah Data</a>
-                        </div>
                     </div>
                 </div>
                 <div class="card-body table-responsive">
@@ -57,7 +54,7 @@
                                     <td>{{ $p->obat->nama }}</td>
                                     <td>{{ $p->dosis->nama }}</td>
                                     <td>{{ $p->waktu->nama }}</td>
-                                    <td>{{ $p->dokter->username }}</td>
+                                    {{-- <td>{{ $p->user->username }}</td> --}}
                                     <td>
                                         <div class="btn-group btn-group-square" role="group" aria-label="">
                                             <a href="{{ url("$url/" . $p->id, []) }}" class="btn btn-dark" title="Detail Data">Detail</a>

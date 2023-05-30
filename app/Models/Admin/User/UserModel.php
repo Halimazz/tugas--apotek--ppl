@@ -22,4 +22,9 @@ class UserModel extends Model
     {
         return $this->belongsTo(UserRole::class, 'idRole', 'id');
     }
+    public function scopeDokter($query)
+{
+    return $query->where('idRole', 'dokter');
+}
+
 }
