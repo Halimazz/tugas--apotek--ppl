@@ -49,5 +49,6 @@ Route::middleware(['login'])->group(function () {
     
     Route::middleware(['kasir'])->group(function () {
         Route::resource('kasir/home', ('Kasir\HomeController'));
+        Route::resource('kasir/master-resep', ('Kasir\Master\ResepController'));
     });
 });

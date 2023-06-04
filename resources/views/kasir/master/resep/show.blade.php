@@ -1,4 +1,4 @@
-@extends($apoteker)
+@extends($kasir)
 
 @section('css-library')
     {{-- Tempat Ngoding Meletakkan css library --}}

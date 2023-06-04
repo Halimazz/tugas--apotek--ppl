@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Apoteker\Master;
+namespace App\Http\Controllers\Kasir\Master;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,9 +15,9 @@ use App\Models\Admin\Master\Waktu;
 class ResepController extends Controller
 {
    
-    private $views      = 'apoteker/master/resep';
-    private $url        = 'apoteker/master-resep';
-    private $title      = 'Halaman Proses Resep';
+    private $views      = 'kasir/master/resep';
+    private $url        = 'kasir/master-resep';
+    private $title      = 'Halaman Validasi Resep';
 
 
     public function __construct()

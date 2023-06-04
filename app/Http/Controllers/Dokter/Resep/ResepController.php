@@ -17,7 +17,7 @@ class ResepController extends Controller
    
     private $views      = 'dokter/resep';
     private $url        = 'dokter/resep';
-    private $title      = 'Halaman Dashboard';
+    private $title      = 'Halaman Input Resep';
 
 
     public function __construct()

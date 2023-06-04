@@ -24,11 +24,11 @@
           </div>
             {{-- otomatis masuk karena pake resource --}}
             <div class="card-body table-responsive">
-                <table id="basic-1" class="display">
+                <table class="table table-striped">
                     <tbody>
                         <tr>
                             <td><strong>Nama Pasien</strong></td>
-                            <td>:{{ $resep->nama_pasen }}</td>
+                            <td>:{{ $resep->nama_pasien }}</td>
                             <td></td>
                             <td></td>
                         </tr>
