@@ -43,6 +43,7 @@
                                 <th>Obat</th>
                                 <th>Dosis</th>
                                 <th>Waktu</th>
+                                <th>Status</th>
                                 <th width="10%">Action</th>
                             </tr>
                         </thead>
@@ -55,6 +56,15 @@
                                     <td>{{ $p->obat->nama }}</td>
                                     <td>{{ $p->dosis->nama }}</td>
                                     <td>{{ $p->waktu->nama }}</td>
+                                    <td>
+                                        @if ($p->status == 0)
+                                        <span class="badge badge-warning">Pending</span>  
+                                        @elseif ($p->status == 1)
+                                        <span class="badge badge-success">Ready</span>
+                                        @elseif ($p->status == 2)
+                                        <span class="badge badge-info">Validated</span>
+                                    @endif
+                                    </td>
                                     {{-- <td>{{ $p->dokter->username }}</td> --}}
                                     <td>
                                         <div class="btn-group btn-group-square" role="group" aria-label="">

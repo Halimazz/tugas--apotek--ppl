@@ -29,7 +29,15 @@
                         <tr>
                             <td><strong>Nama Pasien</strong></td>
                             <td>:{{ $resep->nama_pasien }}</td>
-                            <td></td>
+                            <td>
+                                @if ($resep->status == 0)
+                                <span class="badge badge-warning">Pending</span>  
+                                @elseif ($resep->status == 1)
+                                <span class="badge badge-success">Ready</span>
+                                @elseif ($resep->status == 2)
+                                <span class="badge badge-info">Validated</span>
+                            @endif
+                            </td>
                             <td></td>
                         </tr>
                         <tr>

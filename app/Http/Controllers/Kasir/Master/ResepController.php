@@ -67,7 +67,8 @@ class ResepController extends Controller
         'idMWaktu'      =>$request->idMWaktu,
         'idMDokter'     =>session()->get('users_id'),
         'nama_pasien'   =>$request->nama_pasien,
-        'no_telp'       =>$request->no_telp
+        'no_telp'       =>$request->no_telp,
+        'status'        =>$request->status
 
        ];
        $this->resep->create($dataResep);
@@ -118,7 +119,8 @@ class ResepController extends Controller
             'idMWaktu'      =>$request->idMWaktu,
             'idMDokter'     =>session()->get('users_id'),
             'nama_pasien'   =>$request->nama_pasien,
-            'no_telp'       =>$request->no_telp
+            'no_telp'       =>$request->no_telp,
+            'status'        =>$request->status
     
            ];
            $this->resep->where('id', $id)->update($dataResep);
