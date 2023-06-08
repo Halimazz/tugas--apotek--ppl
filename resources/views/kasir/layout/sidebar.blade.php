@@ -41,7 +41,7 @@
         </a>
         <div class="collapse" id="ui-master">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ url('kasir/master-resep') }}">Data Pasien</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ url('kasir/master-resep') }}">Data Resep Obat</a></li>
           </ul>
       </li>
 
