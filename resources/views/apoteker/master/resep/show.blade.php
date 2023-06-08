@@ -29,7 +29,7 @@
                         <tr>
                             <td><strong>Nama Pasien</strong></td>
                             <td>:{{ $resep->nama_pasien }}</td>
-                            <td>
+                            <td><strong>Status :</strong>
                                 @if ($resep->status == 0)
                                 <span class="badge badge-warning">Pending</span>  
                                 @elseif ($resep->status == 1)
@@ -57,8 +57,14 @@
                             {{-- <td>:{{ $resep->dokter->user}}</td>  --}}
                             
                         </tr>
+                       
                     </tbody>
                 </table>
+                <form action="{{ url("$url")}}" method="post">
+                    @csrf
+                    @method('PUT')
+                    <button type="submit" class="btn btn-gradient-success btn-rounded btn-fw" name="status" value="2" style="width:100%">Ready</button>
+                </form>
             </div>
         </div>
     </div>

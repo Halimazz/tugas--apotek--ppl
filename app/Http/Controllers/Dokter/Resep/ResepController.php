@@ -106,8 +106,7 @@ class ResepController extends Controller
             
 
             
-        ];
-        dd($resep);
+        ];;
         return view($this->views . "/edit", $data);   
     }
 

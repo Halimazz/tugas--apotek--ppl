@@ -42,8 +42,9 @@
                                 <th>Obat</th>
                                 <th>Dosis</th>
                                 <th>Waktu</th>
+                                <th>Dokter</th>
                                 <th>Status</th>
-                                <th width="10%">Action</th>
+                                <th><center>Action</center></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,6 +56,7 @@
                                     <td>{{ $p->obat->nama }}</td>
                                     <td>{{ $p->dosis->nama }}</td>
                                     <td>{{ $p->waktu->nama }}</td>
+                                    <td></td>
                                     <td>
                                         @if ($p->status == 0)
                                         <span class="badge badge-warning">Pending</span>  
@@ -63,10 +65,9 @@
                                         @elseif ($p->status == 2)
                                         <span class="badge badge-info">Validated</span>
                                     @endif
-                                    </td>
-                                    {{-- <td>{{ $p->user->username }}</td> --}}
+                                   
                                     <td>
-                                        <div class="btn-group btn-group-square" role="group" aria-label="">
+                                    <div class="btn-group btn-group-square" role="group" aria-label="">
                                             <a href="{{ url("$url/" . $p->id, []) }}" class="btn btn-dark" title="Detail Data">Detail</a>
                                             <a href="{{ url("$url/" . $p->id, []) }}/edit" class="btn btn-primary" title="Ubah Data">Edit</a>
                                             {{-- <a href="{{ route('dosis.destroy', ['id' => $p->id]) }}" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $p->id }}').submit();" class="btn btn-danger" title="Hapus Data">Hapus</a> --}}
