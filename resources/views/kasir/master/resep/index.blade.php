@@ -34,6 +34,7 @@
                     </div>
                 </div>
                 <div class="card-body table-responsive">
+                @if ($resep->status==1)
                     <table id="basic-1" class="table table-hover table-striped">
                         <thead>
                             <tr>
@@ -78,6 +79,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                @endif    
                 </div>
             </div>
         </div>

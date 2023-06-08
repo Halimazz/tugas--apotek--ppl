@@ -54,17 +54,18 @@
                         </tr>
                         <tr>
                             <td><strong>Dokter</strong></td>
-                            {{-- <td>:{{ $resep->dokter->user}}</td>  --}}
+                            <td>:{{ $resep->dokter->username}}</td> 
                             
                         </tr>
                        
                     </tbody>
                 </table>
-                <form action="{{ url("$url")}}" method="post">
-                    @csrf
-                    @method('PUT')
-                    <button type="submit" class="btn btn-gradient-success btn-rounded btn-fw" name="status" value="2" style="width:100%">Ready</button>
-                </form>
+                @if ($resep->status == 0)
+                    <form action="{{ route("resep.aktivasi", $resep->id)}}" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-gradient-success btn-rounded btn-fw" name="status" value="2" style="width:100%">Ready</button>
+                    </form>
+                @endif
             </div>
         </div>
     </div>

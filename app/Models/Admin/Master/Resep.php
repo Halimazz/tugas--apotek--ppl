@@ -36,7 +36,7 @@ class Resep extends Model
     }
     public function dokter()
     {
-        return $this->belongsTo(UserModel::class, 'idMDokter','id')->dokter();
+        return $this->belongsTo(UserModel::class, 'idMDokter','id')->withDefault();
     }
     
     public function apoteker(){

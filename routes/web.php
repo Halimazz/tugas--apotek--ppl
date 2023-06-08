@@ -41,6 +41,7 @@ Route::middleware(['login'])->group(function () {
     
     Route::middleware(['apoteker'])->group(function () {
         Route::resource('apoteker/home', ('Apoteker\HomeController'));
+        Route::post('apoteker/master-resep/aktivasi/{id}', ('Apoteker\Master\ResepController@aktivasi'))->name('resep.aktivasi');
         Route::resource('apoteker/master-resep', ('Apoteker\Master\ResepController'));
         Route::resource('apoteker/master-obat', ('Apoteker\Master\ObatController'));
         Route::resource('apoteker/master-dosis', ('Apoteker\Master\DosisController'));
