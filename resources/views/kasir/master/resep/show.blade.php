@@ -53,18 +53,30 @@
                             <td>:{{ $resep->waktu->nama }}</td>
                         </tr>
                         <tr>
-                            <td><strong>Dokter</strong></td>
-                            {{-- <td>:{{ $resep->dokter->user}}</td>  --}}
-                            
+                            <td><strong>Dokter </strong></td>
+                            <td>: {{ $resep->dokter->username}}</td>
+                            @if ($resep->status == 2)
+                                <td><strong>Kasir :</strong></td>
+                                <td>: {{ $resep->kasir->username}}</td>
+                            @endif  
+                        </tr>
+                        <tr>
+                            @if ($resep->status == 2)
+                                <td><strong>Tanggal Validasi</strong></td>
+                                <td>:{{ $resep->updated_at }}</td>
+                                <td></td>
+                                <td></td>
+                            @endif
                         </tr>
                         
                     </tbody>
                 </table>
-                <form action="{{ url("$url")}}" method="post">
+                @if ($resep->status == 1)
+                <form action="{{ route("resep.validasi", $resep->id)}}" method="post">
                     @csrf
-                    @method('PUT')
-                    <button type="submit" class="btn btn-gradient-info btn-rounded btn-fw" name="status" value="2" style="width:100%">Validate</button>
+                    <button type="submit" class="btn btn-gradient-info btn-rounded btn-fw" name="status" value="2" style="width:100%">Validasi</button>
                 </form>
+            @endif
             </div>
         </div>
     </div>

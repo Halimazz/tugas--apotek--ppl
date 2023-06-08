@@ -36,7 +36,7 @@ class ResepController extends Controller
             'url'           => $this->url,
             'page'          => 'Halaman Pengajuan Resep',
             'resep'         => $resep,
-            'idMDokter'       =>session()->get('users_id')
+            'idMKasir'       =>session()->get('users_id')
         ];
         return view($this->views . "/index", $data);
     }
@@ -65,7 +65,7 @@ class ResepController extends Controller
         'idMObat'       =>$request->idMObat,
         'idMDosis'      =>$request->idMDosis,
         'idMWaktu'      =>$request->idMWaktu,
-        'idMDokter'     =>session()->get('users_id'),
+        'idMKasir'     =>session()->get('users_id'),
         'nama_pasien'   =>$request->nama_pasien,
         'no_telp'       =>$request->no_telp,
         'status'        =>$request->status
@@ -86,6 +86,17 @@ class ResepController extends Controller
             'resep'         => $resep
         ];
         return view($this->views . "/show", $data);
+    }
+
+    public function  validasi(Request $request, $id)
+    {
+       $dataResep =[
+        'status'        => '2',
+        'idMKasir'   => session()->get('users_id'),
+       ];
+       $this->resep->where('id', $id)->update($dataResep);
+
+       return redirect("$this->url")->with('sukses', 'Resep berhasil di validasi');
     }
 
     public function edit($id)
@@ -117,7 +128,7 @@ class ResepController extends Controller
             'idMObat'       =>$request->idMObat,
             'idMDosis'      =>$request->idMDosis,
             'idMWaktu'      =>$request->idMWaktu,
-            'idMDokter'     =>session()->get('users_id'),
+            'idMKasir'     =>session()->get('users_id'),
             'nama_pasien'   =>$request->nama_pasien,
             'no_telp'       =>$request->no_telp,
             'status'        =>$request->status

@@ -53,7 +53,7 @@
                         </tr>
                         <tr>
                             <td><strong>Dokter</strong></td>
-                            {{-- <td>:{{ $resep->dokter->user}}</td>  --}}
+                            <td>:{{ $resep->dokter->username}}</td> 
                             
                         </tr>
                     </tbody>

@@ -50,6 +50,7 @@ Route::middleware(['login'])->group(function () {
     
     Route::middleware(['kasir'])->group(function () {
         Route::resource('kasir/home', ('Kasir\HomeController'));
+        Route::post('kasir/master-resep/validasi/{id}', ('Kasir\Master\ResepController@validasi'))->name('resep.validasi');
         Route::resource('kasir/master-resep', ('Kasir\Master\ResepController'));
     });
 });

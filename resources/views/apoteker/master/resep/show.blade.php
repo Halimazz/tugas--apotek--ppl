@@ -54,7 +54,13 @@
                         </tr>
                         <tr>
                             <td><strong>Dokter</strong></td>
-                            <td>:{{ $resep->dokter->username}}</td> 
+                            <td>:{{ $resep->dokter->username}}</td>
+                            @if ($resep->status == 1)
+                            <td><strong>Apoteker :</strong></td>
+                            <td>:{{ $resep->apoteker->username}}</td> 
+                                
+                            @endif
+                          
                             
                         </tr>
                        

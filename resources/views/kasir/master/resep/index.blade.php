@@ -34,7 +34,6 @@
                     </div>
                 </div>
                 <div class="card-body table-responsive">
-                @if ($resep->status==1)
                     <table id="basic-1" class="table table-hover table-striped">
                         <thead>
                             <tr>
@@ -70,7 +69,6 @@
                                     <td>
                                         <div class="btn-group btn-group-square" role="group" aria-label="">
                                             <a href="{{ url("$url/" . $p->id, []) }}" class="btn btn-dark" title="Detail Data">Detail</a>
-                                            <a href="{{ url("$url/" . $p->id, []) }}/edit" class="btn btn-primary" title="Ubah Data">Edit</a>
                                             {{-- <a href="{{ route('dosis.destroy', ['id' => $p->id]) }}" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $p->id }}').submit();" class="btn btn-danger" title="Hapus Data">Hapus</a> --}}
                                             {{-- <form id="delete-form-{{ $p->id }}" action="{{ route('merk.destroy', ['id' => $p->id]) }}" method="POST" style="display: none;">@csrf</form> --}}
                                         </div>
@@ -78,8 +76,7 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                    </table>
-                @endif    
+                    </table>  
                 </div>
             </div>
         </div>

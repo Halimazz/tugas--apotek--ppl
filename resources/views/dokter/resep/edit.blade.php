@@ -60,9 +60,9 @@
                         <div class="mb-3">
                             <div class="col-form-label">Dosis</div>
                             <select id="select-dosis" class="form-control" name="idMDosis" required>
+                                <option value="{{ $resep->dosis->id }}" selected >{{ $resep->dosis->nama }}</option>
                                 @foreach ($dosis as $p)
-                                <option value="{{ $p->id }}" selected >{{ $p->nama }}</option>
-                                    @if ($p->id != $p->id)
+                                    @if ($p->id != $resep->dosis->id)
                                         <option value="{{ $p->id }}">{{ $p->nama }}</option>
                                     @endif
                                 @endforeach
@@ -72,9 +72,9 @@
                         <div class="mb-3">
                             <div class="col-form-label">Waktu</div>
                             <select id="select-waktu" class="form-control" name="idMWaktu" required>
+                                <option value="{{ $resep->waktu->id }}" selected >{{ $resep->waktu->nama }}</option>
                                 @foreach ($waktu as $p)
-                                <option value="{{ $p->id }}" selected >{{ $p->nama }}</option>
-                                    @if ($p->id != $p->id)
+                                    @if ($p->id != $resep->waktu->id)
                                         <option value="{{ $p->id }}">{{ $p->nama }}</option>
                                     @endif
                                 @endforeach

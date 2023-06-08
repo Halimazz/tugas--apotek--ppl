@@ -40,9 +40,9 @@ class Resep extends Model
     }
     
     public function apoteker(){
-        return $this->belongsTo(UserModel::class,'idMApoteker','id');
+        return $this->belongsTo(UserModel::class,'idMApoteker','id')->withDefault();
     }
     public function kasir(){
-        return $this->belongsTo(UserModel::class,'idMKasir','id');
+        return $this->belongsTo(UserModel::class,'idMKasir','id')->withDefault();
     }
 }
