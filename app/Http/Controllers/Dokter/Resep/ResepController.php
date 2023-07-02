@@ -63,6 +63,7 @@ class ResepController extends Controller
        $dataResep =[
        
         'idMObat'       =>$request->idMObat,
+        'qty'           =>$request->qty,
         'idMDosis'      =>$request->idMDosis,
         'idMWaktu'      =>$request->idMWaktu,
         'idMDokter'     =>session()->get('users_id'),
@@ -115,6 +116,7 @@ class ResepController extends Controller
         $dataResep =[
        
             'idMObat'       =>$request->idMObat,
+            'qty'           =>$request->qty,
             'idMDosis'      =>$request->idMDosis,
             'idMWaktu'      =>$request->idMWaktu,
             'idMDokter'     =>session()->get('users_id'),

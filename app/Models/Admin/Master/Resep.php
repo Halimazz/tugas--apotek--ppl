@@ -23,7 +23,7 @@ class Resep extends Model
 
     protected $guarded = ['id'];
     public function obat(){
-        return $this->belongsTo(Obat::class,'idMObat','id');
+        return $this->belongsTo(Obat::class,'idMObat','id')->withDefault();
     }
     public function dosis(){
         return $this->belongsTo(Dosis::class,'idMDosis','id');

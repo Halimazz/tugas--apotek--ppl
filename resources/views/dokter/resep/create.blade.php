@@ -46,14 +46,21 @@
                         <input name="no_telp" id="no_telp" class="form-control" type="tel" placeholder="Nomor telfon" required>
                     </div>
                     <div class="mb-3">
-                        <div class="col-form-label">Obat</div>
-                        <select id="select-obat" class="form-control" name="idMObat" required>
-                            <option value="">Pilih</option>
-                            @foreach ($obat as $p)
-                                <option value="{{ $p->id }}">{{ $p->nama }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                        <label class="col-form-label">Obat</label>
+                        <div class="row">
+                            <div class="col">
+                                <select id="select-obat" class="form-control" name="idMObat" required>
+                                    <option value="">Pilih</option>
+                                    @foreach ($obat as $p)
+                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input type="number" class="form-control" name="qty" placeholder="Quantity" required>
+                            </div>
+                        </div>
+                    </div>                    
                     <div class="mb-3">
                         <div class="col-form-label">Dosis</div>
                         <select id="select-dosis" class="form-control" name="idMDosis" required>

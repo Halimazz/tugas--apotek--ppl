@@ -78,12 +78,19 @@ class ResepController extends Controller
 
     public function show($id)
     {
-        $resep=$this->resep->where('id', $id)->first();
+        $resep = $this->resep->where('id', $id)->first();
+    
+        // Hitung jumlah
+        $resep->jumlah = $resep->obat->harga * $resep->qty;
+        
+        // Menghitung total
+        $total = $resep->jumlah;
         $data = [
             'title'         => $this->title,
             'url'           => $this->url,
             'page'          => 'Detail Pengajuan',
-            'resep'         => $resep
+            'resep'         => $resep,
+            'total'         => $total
         ];
         return view($this->views . "/show", $data);
     }

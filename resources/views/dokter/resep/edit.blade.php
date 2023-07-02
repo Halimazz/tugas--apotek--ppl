@@ -45,16 +45,21 @@
                         </div>
                         <div class="mb-3" >
                             <div class="col-form-label">Obat</div>
-                            <select id="select-obat" class="form-control" name="idMObat"  required>
-                                <option value="{{ $resep->obat->id }}" selected> {{ $resep->obat->nama }}</option>
-                                @foreach ($obat as $p)
-                                    @if ($p->id != $resep->obat->id)
-                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
-                                    @endif
-                                    
-                                @endforeach
-                                
-                            </select>
+                            <div class="row">
+                                <div class="col">
+                                    <select id="select-obat" class="form-control" name="idMObat"  required>
+                                        <option value="{{ $resep->obat->id }}" selected> {{ $resep->obat->nama }}</option>
+                                        @foreach ($obat as $p)
+                                            @if ($p->id != $resep->obat->id)
+                                                <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <input type="number" class="form-control" name="qty" placeholder="Quantity" value="{{ $resep->qty}}"required>
+                                </div>
+                            </div>     
                         </div>
                         
                         <div class="mb-3">

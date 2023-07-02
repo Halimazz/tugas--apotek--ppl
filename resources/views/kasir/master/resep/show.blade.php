@@ -60,17 +60,29 @@
                                 <td>: {{ $resep->kasir->username}}</td>
                             @endif  
                         </tr>
-                        <tr>
-                            @if ($resep->status == 2)
-                                <td><strong>Tanggal Validasi</strong></td>
-                                <td>:{{ $resep->updated_at }}</td>
-                                <td></td>
-                                <td></td>
-                            @endif
-                        </tr>
-                        
                     </tbody>
-                </table>
+                </table><br>
+                <table border="1" class="table table-striped">
+                    <tr>
+                      <th>No</th>
+                      <th>Nama Obat</th>
+                      <th>Harga @</th>
+                      <th>Qty</th>
+                      <th>Jumlah</th>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>{{ $resep->obat->nama }}</td>
+                      <td>{{ $resep->obat->harga }}</td>
+                      <td>{{ $resep->qty }}</td>
+                      <td>{{ $resep->jumlah }}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">Total</td>
+                      <td>{{ $total }}</td>
+                    </tr>
+                  </table>
+                  <br>
                 @if ($resep->status == 1)
                 <form action="{{ route("resep.validasi", $resep->id)}}" method="post">
                     @csrf

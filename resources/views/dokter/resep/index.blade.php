@@ -5,8 +5,16 @@
 @endsection
 
 @section('css-custom')
-    
+    <style>
+        #disabled-link {
+        pointer-events: none;
+        cursor: default;
+        color: inherit;
+        text-decoration: none;
+    }
+    </style>
 @endsection
+
 
 @section('content')
     <div class="row">
@@ -43,6 +51,7 @@
                                 <th>Nama Pasien</th>
                                 <th>Nomer telfon</th>
                                 <th>Obat</th>
+                                <th>Qty</th>
                                 <th>Dosis</th>
                                 <th>Waktu</th>
                                 <th>Status</th>
@@ -56,6 +65,7 @@
                                     <td>{{ $p->nama_pasien }}</td>
                                     <td>{{ $p->no_telp }}</td>
                                     <td>{{ $p->obat->nama }}</td>
+                                    <td>{{ $p->qty }}</td>
                                     <td>{{ $p->dosis->nama }}</td>
                                     <td>{{ $p->waktu->nama }}</td>
                                     <td>
@@ -71,7 +81,11 @@
                                     <td>
                                         <div class="btn-group btn-group-square" role="group" aria-label="">
                                             <a href="{{ url("$url/" . $p->id, []) }}" class="btn btn-dark" title="Detail Data">Detail</a>
-                                            <a href="{{ url("$url/" . $p->id, []) }}/edit" class="btn btn-primary" title="Ubah Data">Edit</a>
+                                            @if ($p->status == 0)
+                                            <a href="{{ url("$url/" . $p->id, []) }}/edit" class="btn btn-primary" title="Ubah Data">Edit</a>  
+                                            @else
+                                            <a href="{{ url("$url/" . $p->id, []) }}/edit" class="btn btn-primary" id="disabled-link" title="Ubah Data">Edit</a>  
+                                            @endif
                                             {{-- <a href="{{ route('dosis.destroy', ['id' => $p->id]) }}" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $p->id }}').submit();" class="btn btn-danger" title="Hapus Data">Hapus</a> --}}
                                             {{-- <form id="delete-form-{{ $p->id }}" action="{{ route('merk.destroy', ['id' => $p->id]) }}" method="POST" style="display: none;">@csrf</form> --}}
                                         </div>
