@@ -23,9 +23,9 @@
         </div>
         @endif
         <div class="brand-logo">
-          <img src="{{ url('') }}/assets/images/logo.svg">
+          <img src="{{ url('') }}/assets/images/apotik.png">
         </div>
-        <h4>Hello! let's get started</h4>
+        <h4>Hello! Selamat Bekerja</h4>
         <h6 class="font-weight-light">Sign in to continue.</h6>
         <form class="pt-3" action="{{ url('loginProses', []) }}" method="post">
             @csrf

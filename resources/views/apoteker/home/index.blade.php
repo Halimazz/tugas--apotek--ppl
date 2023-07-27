@@ -26,7 +26,7 @@
         <div class="card">
             <div class="card-body">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque ab dolorem sapiente ullam totam placeat saepe laudantium amet reprehenderit culpa maiores, laboriosam molestiae quas unde, reiciendis nesciunt vel. Adipisci, excepturi.
+                    <h1>Selamat Datang Kembali {{ session()->get('username') }},Semoga Harimu Menyenangkan </h1>
                 </p>
             </div>
         </div>

@@ -15,6 +15,12 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <span class="menu-title"><a class="nav-link" href="{{ url('kasir/home') }}">Dashboard</span>
+          <i class="mdi mdi-home menu-icon"></i>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-master" aria-expanded="false" aria-controls="ui-master">
           <span class="menu-title">Master</span>
           <i class="menu-arrow"></i>

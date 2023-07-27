@@ -62,6 +62,7 @@
                         </tr>
                     </tbody>
                 </table><br>
+                @if ($resep->status == 1 || $resep->status == 2)
                 <table border="1" class="table table-striped">
                     <tr>
                       <th>No</th>
@@ -83,7 +84,8 @@
                     </tr>
                   </table>
                   <br>
-                @if ($resep->status == 1)
+                  @endif
+                  @if ($resep->status == 1)
                 <form action="{{ route("resep.validasi", $resep->id)}}" method="post">
                     @csrf
                     <button type="submit" class="btn btn-gradient-info btn-rounded btn-fw" name="status" value="2" style="width:100%">Validasi</button>
