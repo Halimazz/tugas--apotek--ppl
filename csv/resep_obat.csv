@@ -1,0 +1,5 @@
+created_at,deleted_at,updated_at,id,nama_pasien,no_telp,idMObat,qty,idMDosis,idMWaktu,idMDokter,idMApoteker,idMKasir,status
+"2022-12-25 15:33:25",NULL,"2023-06-30 15:35:39",1,"Aziz nur",2147483647,3,3,3,2,9,11,12,2
+"2023-05-18 07:21:05",NULL,"2023-07-04 02:43:53",2,rifki,81381391,2,2,3,2,9,11,NULL,1
+"2023-05-18 07:28:52",NULL,"2023-07-04 05:13:18",3,jawa,0836328329329,2,4,3,2,9,11,12,2
+"2023-07-04 05:09:32",NULL,"2023-07-04 05:09:32",4,raka,082125172721,3,5,3,1,9,NULL,NULL,0
